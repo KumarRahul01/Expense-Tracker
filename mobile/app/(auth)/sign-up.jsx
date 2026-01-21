@@ -114,7 +114,7 @@ export default function SignUpScreen() {
             <Ionicons name="alert-circle" size={20} color= {COLORS.expense}/>
             <Text style={styles.errorText}>{error}</Text>
             <TouchableOpacity>
-             <Ionicons name="close" size={20} color= {COLORS.textLight}/>
+             <Ionicons name="close" size={20} color= {COLORS.textLight}  onPress={()=> setError("")}/>
             </TouchableOpacity>
           </View>
         ): null}
