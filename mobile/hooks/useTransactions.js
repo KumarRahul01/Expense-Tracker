@@ -1,6 +1,8 @@
 import { useCallback, useState } from "react"
 import { Alert } from "react-native";
-const API_URL = "http://localhost:5000/api";
+
+const API_URL = "https://expense-tracker-backend-ae7u.onrender.com/api";
+// const API_URL = "http://localhost:5000/api";
 
 export const useTransactions = (userId) => {
   const [transactions, setTransactions] = useState([]);
@@ -15,7 +17,8 @@ export const useTransactions = (userId) => {
     try {
       const response = await fetch(`${API_URL}/transactions/${userId}`);
       const data = await response.json();
-      setTransactions(data)
+      setTransactions(data.data)
+
     } catch (error) {
       console.log("error fetching transactions", error)
     }
